@@ -1,0 +1,33 @@
+
+public class regBatting {
+	
+	private static int gamesPlayed;
+	private static int atBats;
+	private static int hits;
+	private static int HR;
+	private static int R;
+	private static int RBI;
+	private static int SB;
+	private static int BB;
+	private static int SO;
+	private static int HBP;
+	private static int sacFly;
+	private static double BA;
+	private static double OBP;
+	
+  //Batting Average
+	public static void BA() {
+		BA = hits/atBats;
+	}
+	
+  //On Base Percentage
+	public static void OBP() {
+		OBP = (hits + BB + HBP)/(atBats + BB + HBP + sacFly);
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
