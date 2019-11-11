@@ -1,10 +1,16 @@
 
+import javax.swing.*;
+
 public class regBatting {
 	
 	private static int gamesPlayed;
+	private static int PA;
 	private static int atBats;
 	private static int hits;
 	private static int HR;
+	private static int singles;
+	private static int doubles;
+	private static int triples;
 	private static int R;
 	private static int RBI;
 	private static int SB;
@@ -14,20 +20,46 @@ public class regBatting {
 	private static int sacFly;
 	private static double BA;
 	private static double OBP;
+	private static double slug;
+	private static double OPS;
+	private static double opsPlus;
 	
-  //Batting Average
+	//Batting Average
 	public static void BA() {
 		BA = hits/atBats;
 	}
 	
-  //On Base Percentage
+	//On Base Percentage
 	public static void OBP() {
 		OBP = (hits + BB + HBP)/(atBats + BB + HBP + sacFly);
 	}
 	
+	//Slugging Percentage
+	public static void slugging( ) {
+		int totalBases = hits + doubles + (triples * 2) + (HR * 3);
+		slug = totalBases/atBats; 
+	}
+	
+	public static void OPS() {
+		OPS = OBP + slug;
+	}
+	
+	public static void opsPlus() {
+		
+	}
+	
+	public static void createTable() {
+		String[] columnNames = {"Last Name", "First Name", "Games Played", "At Bats"};
+		Object[][] data = {{"Trout", "Mike", "500", "500"}};
+		JTable table = new JTable(data, columnNames);
+		JScrollPane tableScrollPane = new JScrollPane(table);
+		table.setFillsViewportHeight(true);
+		table.setAutoCreateRowSorter(true);
+	}
 	
 	public static void main(String[] args) {
 		
+		createTable();
 	}
 
 }
