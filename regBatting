@@ -49,12 +49,21 @@ public class regBatting {
 	}
 	
 	public static void createTable() {
+		JFrame myframe = new JFrame("Frame");
+        JButton firstButton = new JButton("Connect");
+
+        myframe.setSize(500, 500);
 		String[] columnNames = {"Last Name", "First Name", "Games Played", "At Bats"};
-		Object[][] data = {{"Trout", "Mike", "500", "500"}};
+		Object[][] data = {{"Trout", "Mike", "500", "500"}, {"Bryant", "Kris", "500", "500"}};
 		JTable table = new JTable(data, columnNames);
 		JScrollPane tableScrollPane = new JScrollPane(table);
+		table.setVisible(true);
 		table.setFillsViewportHeight(true);
 		table.setAutoCreateRowSorter(true);
+		table.setShowGrid(true);
+		myframe.add(table);
+	    myframe.pack();           // added this
+	    myframe.setVisible(true);
 	}
 	
 	public static void main(String[] args) {
@@ -63,3 +72,4 @@ public class regBatting {
 	}
 
 }
+
