@@ -4,6 +4,7 @@ public class sabrBatting {
 	public static double runsCreated;
 	public static double wOBA;
 	public static double BABIP;
+	public static double isoPower;
 	
 	// Estimates number of runs a hitter contributed to the team
 	public static void runsCreated() {
@@ -22,6 +23,13 @@ public class sabrBatting {
 	// put in play against a pitcher go for hits excluding home runs
 	public static void BABIP() {
 		BABIP = (regBatting.hits - regBatting.HR)/(regBatting.atBats - regBatting.HR);
+	}
+	
+	// Isolated power
+	// Hitting power showing how many extra bases a player averages per at bat
+	// Defined as slugging percentage minus batting average
+	public static void isoPower() {
+		isoPower = (regBatting.doubles + (regBatting.triples * 2) + (regBatting.HR * 3))/regBatting.atBats;
 	}
 	
 	public static void main(String[] args) {
