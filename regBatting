@@ -2,26 +2,27 @@ import javax.swing.*;
 
 public class regBatting {
 	
-	private static int gamesPlayed;
-	private static int PA;
-	private static int atBats;
-	private static int hits;
-	private static int HR;
-	private static int singles;
-	private static int doubles;
-	private static int triples;
-	private static int R;
-	private static int RBI;
-	private static int SB;
-	private static int BB;
-	private static int SO;
-	private static int HBP;
-	private static int sacFly;
-	private static double BA;
-	private static double OBP;
-	private static double slug;
-	private static double OPS;
-	private static double opsPlus;
+	public static int gamesPlayed;
+	public static int totalBases;
+	public static int PA;
+	public static int atBats;
+	public static int hits;
+	public static int HR;
+	public static int singles;
+	public static int doubles;
+	public static int triples;
+	public static int R;
+	public static int RBI;
+	public static int SB;
+	public static int BB;
+	public static int SO;
+	public static int HBP;
+	public static int sacFly;
+	public static double BA;
+	public static double OBP;
+	public static double slug;
+	public static double OPS;
+	public static double opsPlus;
 	
 	//Batting Average
 	public static void BA() {
@@ -47,13 +48,17 @@ public class regBatting {
 		
 	}
 	
+	public static void totalBases() {
+		totalBases = singles + (2 * doubles) + (3 * triples) + (4 * HR);
+	}
+	
 	public static void createTable() {
 		JFrame myframe = new JFrame("Frame");
         JButton firstButton = new JButton("Connect");
 
         myframe.setSize(500, 500);
 		String[] columnNames = {"Last Name", "First Name", "Games Played", "At Bats"};
-		Object[][] data = {{"Trout", "Mike", "500", "500"}, {"Bryant", "Kris", "500", "500"}};
+		Object[][] data = {{"Trout", "Mike", gamesPlayed, "500"}, {"Bryant", "Kris", gamesPlayed, "500"}};
 		JTable table = new JTable(data, columnNames);
 		JScrollPane tableScrollPane = new JScrollPane(table);
 		table.setVisible(true);
@@ -71,5 +76,6 @@ public class regBatting {
 	}
 
 }
+
 
 
