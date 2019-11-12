@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 
 public class regBatting {
@@ -62,8 +61,8 @@ public class regBatting {
 		table.setAutoCreateRowSorter(true);
 		table.setShowGrid(true);
 		myframe.add(table);
-	    myframe.pack();           // added this
-	    myframe.setVisible(true);
+	    	myframe.pack();           
+	    	myframe.setVisible(true);
 	}
 	
 	public static void main(String[] args) {
@@ -72,4 +71,5 @@ public class regBatting {
 	}
 
 }
+
 
