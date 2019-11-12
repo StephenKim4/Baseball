@@ -1,0 +1,31 @@
+
+public class sabrBatting {
+	
+	public static double runsCreated;
+	public static double wOBA;
+	public static double BABIP;
+	
+	// Estimates number of runs a hitter contributed to the team
+	public static void runsCreated() {
+		runsCreated = ((regBatting.hits + regBatting.BB) * regBatting.totalBases)/(regBatting.atBats + regBatting.BB);
+	}
+	
+	// Weighted on base average
+	// Player's overall offensive contribution per plate appearance
+	public static void wOBA() {
+		wOBA = ((0.72 * regBatting.BB) + (0.884 * regBatting.singles) + (1.257 * regBatting.doubles) + 
+				(1.593 * regBatting.triples) + (2.058 * regBatting.HR))/regBatting.PA;
+	}
+	
+	// Batted balls in play
+	// Measurement of how many balls that a batter puts in play go for hits or how many balls
+	// put in play against a pitcher go for hits excluding home runs
+	public static void BABIP() {
+		BABIP = (regBatting.hits - regBatting.HR)/(regBatting.atBats - regBatting.HR);
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
